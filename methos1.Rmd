@@ -11,7 +11,7 @@ Lets takee a non biologivcal question( I know wth), yes, I'm into some nextflix 
 
 Now, out of curiosity, what kind of study is it ? Observational would you say, yes, correct ! So, our claim is that ' Nflix put out lot of dramas which made them the most popular streaming service', now this statement is your Ha (Alternate hypothseis) that want to be true, amd Ho (null hypothesis) is what you think has no influence on, so here we can say that they did not put out lot of drama shows. Although, its a murky 
 
-One could argue that we are infac doing a counting study, we are not doing any hypothesis testing. Maybe we could attribute success of the channel to dramas which were put out and which infact became popular.
+One could argue that we are infact doing a counting study, we are not doing any hypothesis testing. Maybe we could attribute success of the channel to dramas which were put out and which infact became popular.
 
 ```{r}
 require(stats); require(graphics)
@@ -20,6 +20,18 @@ boxplot(weight ~ group, data = PlantGrowth, main = "PlantGrowth data",
         notch = TRUE, varwidth = TRUE)
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+F1 generation cross between two strains of Drosophilia(Fruit flies), there were 37 female flies, and 47 male flies. The expected sex ratio was 1 male: 1 female. Does the observed ratio differ significantly from the expectation. (Stat for Biology - O.N.Bishop).
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file).
+----------------------------
+          Female   |  Male
+----------------------------
+          | 37       |  47
+----------------------------
+
+Here we can use the Chi-square test to see if there is a deviation from the expected.
+
+```{r}
+
+```
+
+Two other questions pop-up Homegeneity , and Independent Sampling 
