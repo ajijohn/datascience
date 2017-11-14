@@ -1,0 +1,25 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook to cover basic statistics required for Biology, and infact for doing datascience. When you execute code within the notebook, the results appear beneath the code. 
+
+First we need to have a question, how/why/what something happens. It is a fundamental curiosity which invokes the hypothesis. A hypothsus is a claim which you are unsure of or want to seek answer to by observation or by doing experiments.
+
+Lets takee a non biologivcal question( I know wth), yes, I'm into some nextflix shows, and I see the popularity of the shows skyrocketting. I on that basis put out a hypothesis that Netflix put out lot of TV dramas which got good following by audience worldwide.
+
+Now, out of curiosity, what kind of study is it ? Observational would you say, yes, correct ! So, our claim is that ' Nflix put out lot of dramas which made them the most popular streaming service', now this statement is your Ha (Alternate hypothseis) that want to be true, amd Ho (null hypothesis) is what you think has no influence on, so here we can say that they did not put out lot of drama shows. Although, its a murky 
+
+One could argue that we are infac doing a counting study, we are not doing any hypothesis testing. Maybe we could attribute success of the channel to dramas which were put out and which infact became popular.
+
+```{r}
+require(stats); require(graphics)
+boxplot(weight ~ group, data = PlantGrowth, main = "PlantGrowth data",
+        ylab = "Dried weight of plants", col = "lightgray",
+        notch = TRUE, varwidth = TRUE)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file).
