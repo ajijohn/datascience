@@ -3,22 +3,22 @@ title: "R Notebook"
 output: html_notebook
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook to cover basic statistics required for Biology, and infact for doing datascience. When you execute code within the notebook, the results appear beneath the code. 
 
-First we need to have a question, how/why/what something happens. It is a fundamental curiosity which invokes the hypothesis. A hypothsus is a claim which you are unsure of or want to seek answer to by observation or by doing experiments.
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook to cover basic statistics required for Biology, and infact for doing some scrappy datascience. When you execute code within the notebook, the results appear beneath the code. 
 
-Lets takee a non biologivcal question( I know wth), yes, I'm into some nextflix shows, and I see the popularity of the shows skyrocketting. I on that basis put out a hypothesis that Netflix put out lot of TV dramas which got good following by audience worldwide.
+First we need to have a question, how/why/what something happens. It is a fundamental curiosity which invokes the hypothesis. A hypothesis is a claim which you are unsure of or want to seek answer to by observation or by doing experiments.
 
-Now, out of curiosity, what kind of study is it ? Observational would you say, yes, correct ! So, our claim is that ' Nflix put out lot of dramas which made them the most popular streaming service', now this statement is your Ha (Alternate hypothseis) that want to be true, amd Ho (null hypothesis) is what you think has no influence on, so here we can say that they did not put out lot of drama shows. Although, its a murky 
-
-One could argue that we are infact doing a counting study, we are not doing any hypothesis testing. Maybe we could attribute success of the channel to dramas which were put out and which infact became popular.
+Lets take an example from the class about Mendelian genetics. Parents (YYRR * ggww)  -> F1(YgRw). We expect the secong generation(F2) cross to follow 9(YR):3(Yw):3(gR):1(gw) ratio.  Example Adapted from Zar (Biostatistics)
 
 ```{r}
-require(stats); require(graphics)
-boxplot(weight ~ group, data = PlantGrowth, main = "PlantGrowth data",
-        ylab = "Dried weight of plants", col = "lightgray",
-        notch = TRUE, varwidth = TRUE)
+x <- matrix(c(2504,853,881,292), ncol = 4)
+chisq.test(x, p = c(9/16,3/16,3/16,1/16))
+
 ```
+As p-value > 0.05, we fail to reject our null hypothesis that the observed frequency follows Mendelian theory.
+
+Another example on the same line.
+
 
 F1 generation cross between two strains of Drosophilia(Fruit flies), there were 37 female flies, and 47 male flies. The expected sex ratio was 1 male: 1 female. Does the observed ratio differ significantly from the expectation. (Stat for Biology - O.N.Bishop).
 
@@ -31,7 +31,19 @@ F1 generation cross between two strains of Drosophilia(Fruit flies), there were 
 Here we can use the Chi-square test to see if there is a deviation from the expected.
 
 ```{r}
+x <- matrix(c(37,47), ncol = 2)
+chisq.test(x, p = c(.5,0.5))
+```
+As p-value > 0.05, we fail to reject our null hypothesis that their would equal number of male and female in F1 cross.
 
+Now, lets try to test our Mendelian theory by different set of experimental results.
+
+```{r}
+x <- matrix(c(152,39,53,6), ncol = 4)
+chisq.test(x, p = c(9/16,3/16,3/16,1/16))
 ```
 
-Two other questions pop-up Homegeneity , and Independent Sampling 
+What do you conclude now ?
+
+
+Would you be interested in learning about Homegeneity , and Independent Sampling in the context of Chi-Square test ?
