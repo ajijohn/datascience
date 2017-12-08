@@ -43,7 +43,7 @@ Finding - Time to ﬁrst ﬂowering is signiﬁcantly inﬂuenced by the light e
 
 ```
 
-We have data, and we want to emulate the researcher's result. Because we have lot of observations per treatment group, we need a metric, 'mean' is commonly used, i.e. sum of observations divided by number of observations
+We have data, and we want to emulate the researcher's result. Because we have lot of observations per treatment group, we need a metric, 'mean' is commonly used, i.e. sum of observations(pick the variable of interest) divided by number of observations
 
 ```{r}
 # Note - na.rm	a logical value indicating whether NA values should be stripped before the computation proceeds.
@@ -57,7 +57,7 @@ treatmentxflowering_means
 ```
 
 ```{r}
-# Do a box plot to confirm
+# Do a box plot to confirm your means
 boxplot(first.flower~treatment,data=greenhouse_data, main="Shading effects on flowering", 
   	xlab="Shading treatments", ylab="Time to flower (days)")
 ```
@@ -67,9 +67,20 @@ One such test where we have to compare two means, is t-test
 ```{r}
 t.test(greenhouse_data[greenhouse_data$treatment=='c','first.flower'],greenhouse_data[greenhouse_data$treatment=='he','first.flower'],alternative = "two.sided",conf.level = 0.95)
 ```
-We look for two key values - p-value , for now -think that lower than ,.05 is better (chance of getting this result by random chance). So, we have a 'Measure of probable truth' (O.N.Bishop).
+We look for two key values - p-value, for now - think that lower than .05 is better (chance of getting this result by random chance). So, we have a 'Measure of the probable truth' (O.N.Bishop) that not subjective.
 
-Now, the researcher also looked ar height , and leaf length. Lets explore that next.
+```{r}
+se <- function(x) sqrt(var(x,na.rm = TRUE)/length(x))
+treatmentxflowering_se <- c(se(greenhouse_data[greenhouse_data$treatment=='c','first.flower']),
+                            se(greenhouse_data[greenhouse_data$treatment=='he','first.flower']),
+                            se(greenhouse_data[greenhouse_data$treatment=='ho','first.flower']))
+
+top_SE <- max(treatmentxflowering_means+treatmentxflowering_se*2)
+treatments <- c("c", "he", "ho")
+barCenters <- barplot(treatmentxflowering_means, names.arg=treatments, col="gray", las=1, ylim=c(0,top_SE))
+```
+
+Now, the researcher also looked at height, and leaf length. Lets explore that next.
 ```{r}
 
 ```
