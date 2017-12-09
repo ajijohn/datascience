@@ -78,10 +78,14 @@ treatmentxflowering_se <- c(se(greenhouse_data[greenhouse_data$treatment=='c','f
 top_SE <- max(treatmentxflowering_means+treatmentxflowering_se*2)
 treatments <- c("c", "he", "ho")
 barCenters <- barplot(treatmentxflowering_means, names.arg=treatments, col="gray", las=1, ylim=c(0,top_SE))
+segments(barCenters, treatmentxflowering_means-treatmentxflowering_se*2, barCenters, treatmentxflowering_means+treatmentxflowering_se*2, lwd=2)
+```
+
+
+```{r}
+# We added the error bars
+# Lets test anova for 
+
 ```
 
 Now, the researcher also looked at height, and leaf length. Lets explore that next.
-```{r}
-
-```
-
