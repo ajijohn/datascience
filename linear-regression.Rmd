@@ -1,0 +1,33 @@
+---
+title: "Linear Regression -  Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook for exploring linear regression. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+We would at times want to measure how two parameters of interest are connnected, lets explore a dataset of ours to explore that. We will use the glasshouse data in the shading experiment.
+```{r}
+greenhouse_data <- read.csv('data/Greenhouse_data_TH/het data-Table 1.csv',header = TRUE,as.is = TRUE,na.strings = "n/a")
+str(greenhouse_data)
+```
+Do the summary statistics to get a sense of the data
+```{r}
+summary(greenhouse_data)
+
+```
+We could explore the relationship between leaf length and height of the plant, and see if there is any correlation.
+
+Best way to visualize it first by doing a simple plot, think of normal cartersian coordinates and we do point plotting(x,y). Recollect what x & y would mean with regards to dependent and independent variables.
+
+```{r}
+plot(data=na.omit(greenhouse_data), x=greenhouse_data$leaf.length, y=greenhouse_data$height)
+#TODO omit the n/A rows
+abline(lm(greenhouse_data$height ~ greenhouse_data$leaf.length))
+```
+```{r}
+# Looks like very ideal linear positive relationship
+
+```
+
