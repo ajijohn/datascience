@@ -26,6 +26,7 @@ plot(data=na.omit(greenhouse_data), x=greenhouse_data$leaf.length, y=greenhouse_
 #TODO omit the n/A rows
 abline(lm(greenhouse_data$height ~ greenhouse_data$leaf.length))
 ```
+When we interpret the linear regression line, we look to see the direction of line, it was three possibilities; going upward, going downward, and parallel to x-axis/y-axis. If it is not parallel to either of the axis, we could confidently say that there is no explained variation of y because of x.
 ```{r}
 # Looks like very ideal linear positive relationship
 
