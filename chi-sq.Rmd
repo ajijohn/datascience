@@ -8,6 +8,10 @@ This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook to cover basic st
 
 First we need to have a question, how/why/what something happens. It is a fundamental curiosity which invokes the hypothesis. A hypothesis is a claim which you are unsure of or want to seek answer to by observation or by doing experiments.
 
+In this notebook; we cover two types of application of Chi-Sq, like other statistical tests, we are trying to ascertain if the results of the experiement is by chance or there is a real phenomena behind.
+
+The first type is where we look to see if the sample pulled from a population is following a probability or a proportion described by a theory. It is also called test of homogeneity aka all of the same kind (ref Zar), Mandelian genetics theory falls into that;
+
 Lets take an example from the class about Mendelian genetics. Parents (YYRR * ggww)  -> F1(YgRw). We expect the secong generation(F2) cross to follow 9(YR):3(Yw):3(gR):1(gw) ratio.  Example Adapted from Zar (Biostatistics)
 
 ```{r}
@@ -45,5 +49,18 @@ chisq.test(x, p = c(9/16,3/16,3/16,1/16))
 
 What do you conclude now ?
 
+Another variation of Chi-Sq is where yoou need to find if the observations were random, or it is signifying an underlying process.  Example from ON Bishop, 5 traps were set out in the woods, and one trap caught fewer than the others, we need to find out if it was by chance or something actual; this might be an actual experiment which you were doing to collect the subjecs for the test.
 
-Would you be interested in learning about Homegeneity , and Independent Sampling in the context of Chi-Square test ?
+------------------------------------------------
+            A   |   B   |  C  | D     | E
+------------------------------------------------
+           23   |  7    | 25  | 19    | 21
+------------------------------------------------
+
+```{r}
+x <- matrix(c(23,7,25,19,21), ncol = 5)
+chisq.test(x, p = c(1/5,1/5,1/5,1/5,1/5))
+```
+Null hypothesis being all the traps are same(homegeneous), and by the p-value, we inferred that it is not the same. The chance is given by the p-vale, i.e. p-value is 0.032, that is to say that there is 3% chance that the null hypothesis is true, which by our established standards is ok (less than 5%), hence, we can accept the results as significant.
+
+Would you be interested in learning more about Homegeneity , and Independent Sampling in the context of Chi-Square test ?
