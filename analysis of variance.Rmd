@@ -1,0 +1,22 @@
+---
+title: "Analysis of variance - Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook for exploring analysis of variance. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+Analysis of variance is commonly used where you have treatment groups, and you are testing the effect of a variable across the treatment groups. Here, we will use the greenhouse data from the shading experiment, and as we have groups classified with various treatments, we will explore the effects on these treatment groups. 
+
+```{r}
+greenhouse_data <- read.csv('data/Greenhouse_data_TH/het data-Table 1.csv',header = TRUE,as.is = TRUE,na.strings = "n/a")
+str(greenhouse_data)
+```
+
+Lets check the effect of treatments to seeds per fruit. 
+```{r}
+lmphan<- lm(data=greenhouse_data, greenhouse_data$seeds.per.fruit~greenhouse_data$treatment)
+anova(lmphan)
+```
+
