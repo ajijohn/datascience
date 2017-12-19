@@ -22,13 +22,23 @@ We could explore the relationship between leaf length and height of the plant, a
 Best way to visualize it first by doing a simple plot, think of normal cartersian coordinates and we do point plotting(x,y). Recollect what x & y would mean with regards to dependent and independent variables.
 
 ```{r}
-plot(data=na.omit(greenhouse_data), x=greenhouse_data$leaf.length, y=greenhouse_data$height)
+plot(data=na.omit(greenhouse_data), x=greenhouse_data$leaf.length, y=greenhouse_data$height,
+     main="Shading effects on plant height", xlab="Leaf length", ylab="Plant height")
+
 #TODO omit the n/A rows
 abline(lm(greenhouse_data$height ~ greenhouse_data$leaf.length))
 ```
-When we interpret the linear regression line, we look to see the direction of line, it was three possibilities; going upward, going downward, and parallel to x-axis/y-axis. If it is not parallel to either of the axis, we could confidently say that there is no explained variation of y because of x.
+When we interpret the linear regression line, we look to see the direction of line, it has four possibilities; no correlation(its all evenly spread point cloud), going upward, going downward, and parallel to x-axis/y-axis. If it is not parallel to either of the axis, we could confidently say that there is no explained variation of y because of x.
+
+Linear regression gives a way to measure correlation, and most prevalent way is to give it as a coorelation coefficient. R gives us a way to extract that for two variables.
 ```{r}
-# Looks like very ideal linear positive relationship
+ # Looks like very ideal linear positive relationship, but we ought to be not subjective.
+lm(data=greenhouse_data, greenhouse_data$height~greenhouse_data$leaf.length)
 
 ```
+Lets inspect it more, and need to invoke summary() function to get correlation coefficient. 
+```{r}
+ # Looks like very ideal linear positive relationship, but we ought to be not subjective.
+summary(lm(data=greenhouse_data, greenhouse_data$height~greenhouse_data$leaf.length))
 
+```
