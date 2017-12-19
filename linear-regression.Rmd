@@ -40,5 +40,13 @@ Lets inspect it more, and need to invoke summary() function to get correlation c
 ```{r}
  # Looks like very ideal linear positive relationship, but we ought to be not subjective.
 summary(lm(data=greenhouse_data, greenhouse_data$height~greenhouse_data$leaf.length))
+lmph<- lm(data=greenhouse_data, greenhouse_data$height~greenhouse_data$leaf.length)
+```
+Ideally, coorelation coefficient is squared, so what you see R give out is R-squared, which is basically square of correlation coeffcient.
 
+```{r}
+
+opar <- par(mfrow = c(2,2), oma = c(0, 0, 1.1, 0))
+plot(lmph, las = 1)      # Residuals, Fitted, ...
+par(opar)
 ```
