@@ -202,8 +202,85 @@ Residuals                 743 70.749 0.095220               </code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShsbXBoYW4pXG5gYGAifQ== -->
+<pre class="r"><code>summary(lmphan)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxubG0oZm9ybXVsYSA9IGdyZWVuaG91c2VfZGF0YSRzZWVkcy5wZXIuZnJ1aXQgfiBncmVlbmhvdXNlX2RhdGEkdHJlYXRtZW50LCBcbiAgICBkYXRhID0gZ3JlZW5ob3VzZV9kYXRhKVxuXG5SZXNpZHVhbHM6XG4gICAgTWluICAgICAgMVEgIE1lZGlhbiAgICAgIDNRICAgICBNYXggXG4tMi4yMDA5IC0wLjE4ODkgIDAuMTk5MCAgMC4xOTkxICAwLjIxMTEgXG5cbkNvZWZmaWNpZW50czpcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEVzdGltYXRlIFN0ZC4gRXJyb3IgdCB2YWx1ZSBQcig+fHR8KSAgICBcbihJbnRlcmNlcHQpICAgICAgICAgICAgICAgICAgNC44MDA4NTg0ICAwLjAyMDIxNTYgMjM3LjQ4MyAgIDwyZS0xNiAqKipcbmdyZWVuaG91c2VfZGF0YSR0cmVhdG1lbnRoZSAtMC4wMTE5Njk1ICAwLjAyNzU5MjQgIC0wLjQzNCAgICAwLjY2NSAgICBcbmdyZWVuaG91c2VfZGF0YSR0cmVhdG1lbnRobyAgMC4wMDAxNzA0ICAwLjAyODI5MzUgICAwLjAwNiAgICAwLjk5NSAgICBcbi0tLVxuU2lnbmlmLiBjb2RlczogIDAg4oCYKioq4oCZIDAuMDAxIOKAmCoq4oCZIDAuMDEg4oCYKuKAmSAwLjA1IOKAmC7igJkgMC4xIOKAmCDigJkgMVxuXG5SZXNpZHVhbCBzdGFuZGFyZCBlcnJvcjogMC4zMDg2IG9uIDc0MyBkZWdyZWVzIG9mIGZyZWVkb21cbiAgKDExNyBvYnNlcnZhdGlvbnMgZGVsZXRlZCBkdWUgdG8gbWlzc2luZ25lc3MpXG5NdWx0aXBsZSBSLXNxdWFyZWQ6ICAwLjAwMDM1MzksXHRBZGp1c3RlZCBSLXNxdWFyZWQ6ICAtMC4wMDIzMzcgXG5GLXN0YXRpc3RpYzogMC4xMzE1IG9uIDIgYW5kIDc0MyBERiwgIHAtdmFsdWU6IDAuODc2OFxuIn0= -->
+<pre><code>
+Call:
+lm(formula = greenhouse_data$seeds.per.fruit ~ greenhouse_data$treatment, 
+    data = greenhouse_data)
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiQW5hbHlzaXMgb2YgdmFyaWFuY2UgLSBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKVGhpcyBpcyBhbiBbUiBNYXJrZG93bl0oaHR0cDovL3JtYXJrZG93bi5yc3R1ZGlvLmNvbSkgTm90ZWJvb2sgZm9yIGV4cGxvcmluZyBhbmFseXNpcyBvZiB2YXJpYW5jZS4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiAKClRyeSBleGVjdXRpbmcgdGhpcyBjaHVuayBieSBjbGlja2luZyB0aGUgKlJ1biogYnV0dG9uIHdpdGhpbiB0aGUgY2h1bmsgb3IgYnkgcGxhY2luZyB5b3VyIGN1cnNvciBpbnNpZGUgaXQgYW5kIHByZXNzaW5nICpDbWQrU2hpZnQrRW50ZXIqLiAKCkFuYWx5c2lzIG9mIHZhcmlhbmNlIGlzIGNvbW1vbmx5IHVzZWQgd2hlcmUgeW91IGhhdmUgdHJlYXRtZW50IGdyb3VwcywgYW5kIHlvdSBhcmUgdGVzdGluZyB0aGUgZWZmZWN0IG9mIGEgdmFyaWFibGUgYWNyb3NzIHRoZSB0cmVhdG1lbnQgZ3JvdXBzLiBIZXJlLCB3ZSB3aWxsIHVzZSB0aGUgZ3JlZW5ob3VzZSBkYXRhIGZyb20gdGhlIHNoYWRpbmcgZXhwZXJpbWVudCwgYW5kIGFzIHdlIGhhdmUgZ3JvdXBzIGNsYXNzaWZpZWQgd2l0aCB2YXJpb3VzIHRyZWF0bWVudHMsIHdlIHdpbGwgZXhwbG9yZSB0aGUgZWZmZWN0cyBvbiB0aGVzZSB0cmVhdG1lbnQgZ3JvdXBzLiAKCmBgYHtyfQpncmVlbmhvdXNlX2RhdGEgPC0gcmVhZC5jc3YoJ2RhdGEvR3JlZW5ob3VzZV9kYXRhX1RIL2hldCBkYXRhLVRhYmxlIDEuY3N2JyxoZWFkZXIgPSBUUlVFLGFzLmlzID0gVFJVRSxuYS5zdHJpbmdzID0gIm4vYSIpCnN0cihncmVlbmhvdXNlX2RhdGEpCmBgYAoKTGV0cyBjaGVjayB0aGUgZWZmZWN0IG9mIHRyZWF0bWVudHMgdG8gc2VlZHMgcGVyIGZydWl0LiAKYGBge3J9CmxtcGhhbjwtIGxtKGRhdGE9Z3JlZW5ob3VzZV9kYXRhLCBncmVlbmhvdXNlX2RhdGEkc2VlZHMucGVyLmZydWl0fmdyZWVuaG91c2VfZGF0YSR0cmVhdG1lbnQpCmFub3ZhKGxtcGhhbikKYGBgCgo=</div>
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.2009 -0.1889  0.1990  0.1991  0.2111 
+
+Coefficients:
+                              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)                  4.8008584  0.0202156 237.483   &lt;2e-16 ***
+greenhouse_data$treatmenthe -0.0119695  0.0275924  -0.434    0.665    
+greenhouse_data$treatmentho  0.0001704  0.0282935   0.006    0.995    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.3086 on 743 degrees of freedom
+  (117 observations deleted due to missingness)
+Multiple R-squared:  0.0003539, Adjusted R-squared:  -0.002337 
+F-statistic: 0.1315 on 2 and 743 DF,  p-value: 0.8768</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Our hypothesis that the treatment effects the seeds per fruit is not supported as our p-value is much higher than 0.05. Remember, we had three treatment groups, and we are interested to find out if the treatments had any effect on seeds.</p>
+<p>We load another package ‘lmne4’, which can assist us with assesing effects. In tackling this sort of questions, we have to keep in mind what kind of variable is we are interested in when looking at the effects. We could see this as discrete and continuous also, in our example we had three treatment groups - He, Ho, and Control, so we can infer them as discrete. In the literature, it is referred to as Fixed or Random effects. Our treatment groups would be classified as ‘Fixed’ effects. To show additionally the effect of a Random variable, we add the source population of the plants.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShsbWU0KVxuI2xtZXIubW9kIDwtIGxtZXIoZmlyc3QuZmxvd2VyfnRyZWF0bWVudCpzb3VyY2UucG9wKygxfHNvdXJjZS5mYW0pKygxfGZpZWxkLmdyZWVuaG91c2UpLCBkYXRhPWhldGRhdGEpXG4jYW5vdmEobG1lci5tb2QpXG5sbWVyZXggPC0gbG1lcihzZWVkcy5wZXIuZnJ1aXQgfiB0cmVhdG1lbnQgKyAoMXxzb3VyY2UuZmFtKSxkYXRhPWdyZWVuaG91c2VfZGF0YSlcbmFub3ZhKGxtZXJleClcbmBgYCJ9 -->
+<pre class="r"><code>library(lme4)
+#lmer.mod &lt;- lmer(first.flower~treatment*source.pop+(1|source.fam)+(1|field.greenhouse), data=hetdata)
+#anova(lmer.mod)
+lmerex &lt;- lmer(seeds.per.fruit ~ treatment + (1|source.fam),data=greenhouse_data)
+anova(lmerex)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiQW5hbHlzaXMgb2YgVmFyaWFuY2UgVGFibGVcbiAgICAgICAgICBEZiAgIFN1bSBTcSAgIE1lYW4gU3EgRiB2YWx1ZVxudHJlYXRtZW50ICAyIDAuMDEyODIzIDAuMDA2NDExNyAgMC4xMDA4XG4ifQ== -->
+<pre><code>Analysis of Variance Table
+          Df   Sum Sq   Mean Sq F value
+treatment  2 0.012823 0.0064117  0.1008</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShsbWVyZXgpXG5gYGAifQ== -->
+<pre class="r"><code>summary(lmerex)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTGluZWFyIG1peGVkIG1vZGVsIGZpdCBieSBSRU1MIFsnbG1lck1vZCddXG5Gb3JtdWxhOiBzZWVkcy5wZXIuZnJ1aXQgfiB0cmVhdG1lbnQgKyAoMSB8IHNvdXJjZS5mYW0pXG4gICBEYXRhOiBncmVlbmhvdXNlX2RhdGFcblxuUkVNTCBjcml0ZXJpb24gYXQgY29udmVyZ2VuY2U6IDI1Ni43XG5cblNjYWxlZCByZXNpZHVhbHM6IFxuICAgIE1pbiAgICAgIDFRICBNZWRpYW4gICAgICAzUSAgICAgTWF4IFxuLTYuNTMyMCAtMC4zNjA2ICAwLjI5MjAgIDAuNDgwNyAgMi45ODUzIFxuXG5SYW5kb20gZWZmZWN0czpcbiBHcm91cHMgICAgIE5hbWUgICAgICAgIFZhcmlhbmNlIFN0ZC5EZXYuXG4gc291cmNlLmZhbSAoSW50ZXJjZXB0KSAwLjAzMjg2ICAwLjE4MTMgIFxuIFJlc2lkdWFsICAgICAgICAgICAgICAgMC4wNjM1OSAgMC4yNTIyICBcbk51bWJlciBvZiBvYnM6IDc0NiwgZ3JvdXBzOiAgc291cmNlLmZhbSwgMTUxXG5cbkZpeGVkIGVmZmVjdHM6XG4gICAgICAgICAgICAgRXN0aW1hdGUgU3RkLiBFcnJvciB0IHZhbHVlXG4oSW50ZXJjZXB0KSAgNC43OTU5MzEgICAwLjAyMjczNiAgMjEwLjk0XG50cmVhdG1lbnRoZSAtMC4wMDkzMzYgICAwLjAyMjc2OSAgIC0wLjQxXG50cmVhdG1lbnRobyAtMC4wMDEzNTcgICAwLjAyMzM5MCAgIC0wLjA2XG5cbkNvcnJlbGF0aW9uIG9mIEZpeGVkIEVmZmVjdHM6XG4gICAgICAgICAgICAoSW50cikgdHJlYXRtZW50aGVcbnRyZWF0bWVudGhlIC0wLjU0MyAgICAgICAgICAgIFxudHJlYXRtZW50aG8gLTAuNTI2ICAwLjUyMiAgICAgXG4ifQ== -->
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: seeds.per.fruit ~ treatment + (1 | source.fam)
+   Data: greenhouse_data
+
+REML criterion at convergence: 256.7
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-6.5320 -0.3606  0.2920  0.4807  2.9853 
+
+Random effects:
+ Groups     Name        Variance Std.Dev.
+ source.fam (Intercept) 0.03286  0.1813  
+ Residual               0.06359  0.2522  
+Number of obs: 746, groups:  source.fam, 151
+
+Fixed effects:
+             Estimate Std. Error t value
+(Intercept)  4.795931   0.022736  210.94
+treatmenthe -0.009336   0.022769   -0.41
+treatmentho -0.001357   0.023390   -0.06
+
+Correlation of Fixed Effects:
+            (Intr) treatmenthe
+treatmenthe -0.543            
+treatmentho -0.526  0.522     </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiQW5hbHlzaXMgb2YgdmFyaWFuY2UgLSBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKVGhpcyBpcyBhbiBbUiBNYXJrZG93bl0oaHR0cDovL3JtYXJrZG93bi5yc3R1ZGlvLmNvbSkgTm90ZWJvb2sgZm9yIGV4cGxvcmluZyBhbmFseXNpcyBvZiB2YXJpYW5jZS4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiAKClRyeSBleGVjdXRpbmcgdGhpcyBjaHVuayBieSBjbGlja2luZyB0aGUgKlJ1biogYnV0dG9uIHdpdGhpbiB0aGUgY2h1bmsgb3IgYnkgcGxhY2luZyB5b3VyIGN1cnNvciBpbnNpZGUgaXQgYW5kIHByZXNzaW5nICpDbWQrU2hpZnQrRW50ZXIqLiAKCkFuYWx5c2lzIG9mIHZhcmlhbmNlIGlzIGNvbW1vbmx5IHVzZWQgd2hlcmUgeW91IGhhdmUgdHJlYXRtZW50IGdyb3VwcywgYW5kIHlvdSBhcmUgdGVzdGluZyB0aGUgZWZmZWN0IG9mIGEgdmFyaWFibGUgYWNyb3NzIHRoZSB0cmVhdG1lbnQgZ3JvdXBzLiBIZXJlLCB3ZSB3aWxsIHVzZSB0aGUgZ3JlZW5ob3VzZSBkYXRhIGZyb20gdGhlIHNoYWRpbmcgZXhwZXJpbWVudCwgYW5kIGFzIHdlIGhhdmUgZ3JvdXBzIGNsYXNzaWZpZWQgd2l0aCB2YXJpb3VzIHRyZWF0bWVudHMsIHdlIHdpbGwgZXhwbG9yZSB0aGUgZWZmZWN0cyBvbiB0aGVzZSB0cmVhdG1lbnQgZ3JvdXBzLiAKCmBgYHtyfQpncmVlbmhvdXNlX2RhdGEgPC0gcmVhZC5jc3YoJ2RhdGEvR3JlZW5ob3VzZV9kYXRhX1RIL2hldCBkYXRhLVRhYmxlIDEuY3N2JyxoZWFkZXIgPSBUUlVFLGFzLmlzID0gVFJVRSxuYS5zdHJpbmdzID0gIm4vYSIpCnN0cihncmVlbmhvdXNlX2RhdGEpCmBgYAoKTGV0cyBjaGVjayB0aGUgZWZmZWN0IG9mIHRyZWF0bWVudHMgdG8gc2VlZHMgcGVyIGZydWl0LiAKYGBge3J9CmxtcGhhbjwtIGxtKGRhdGE9Z3JlZW5ob3VzZV9kYXRhLCBncmVlbmhvdXNlX2RhdGEkc2VlZHMucGVyLmZydWl0fmdyZWVuaG91c2VfZGF0YSR0cmVhdG1lbnQpCmFub3ZhKGxtcGhhbikKYGBgCgpgYGB7cn0Kc3VtbWFyeShsbXBoYW4pCmBgYAoKT3VyIGh5cG90aGVzaXMgdGhhdCB0aGUgdHJlYXRtZW50IGVmZmVjdHMgdGhlIHNlZWRzIHBlciBmcnVpdCBpcyBub3Qgc3VwcG9ydGVkIGFzIG91ciBwLXZhbHVlIGlzIG11Y2ggaGlnaGVyIHRoYW4gMC4wNS4gUmVtZW1iZXIsIHdlIGhhZCB0aHJlZSB0cmVhdG1lbnQgZ3JvdXBzLCBhbmQgd2UgYXJlIGludGVyZXN0ZWQgdG8gZmluZCBvdXQgaWYgdGhlIHRyZWF0bWVudHMgaGFkIGFueSBlZmZlY3Qgb24gc2VlZHMuCgpXZSBsb2FkIGFub3RoZXIgcGFja2FnZSAnbG1uZTQnLCB3aGljaCBjYW4gYXNzaXN0IHVzIHdpdGggYXNzZXNpbmcgZWZmZWN0cy4gSW4gdGFja2xpbmcgdGhpcyBzb3J0IG9mIHF1ZXN0aW9ucywgd2UgaGF2ZSB0byBrZWVwIGluIG1pbmQgd2hhdCBraW5kIG9mIHZhcmlhYmxlIGlzIHdlIGFyZSBpbnRlcmVzdGVkIGluIHdoZW4gbG9va2luZyBhdCB0aGUgZWZmZWN0cy4gV2UgY291bGQgc2VlIHRoaXMgYXMgZGlzY3JldGUgYW5kIGNvbnRpbnVvdXMgYWxzbywgaW4gb3VyIGV4YW1wbGUgd2UgaGFkIHRocmVlIHRyZWF0bWVudCBncm91cHMgLSBIZSwgSG8sIGFuZCBDb250cm9sLCBzbyB3ZSBjYW4gaW5mZXIgdGhlbSBhcyBkaXNjcmV0ZS4gSW4gdGhlIGxpdGVyYXR1cmUsIGl0IGlzIHJlZmVycmVkIHRvIGFzIEZpeGVkIG9yIFJhbmRvbSBlZmZlY3RzLiBPdXIgdHJlYXRtZW50IGdyb3VwcyB3b3VsZCBiZSBjbGFzc2lmaWVkIGFzICdGaXhlZCcgZWZmZWN0cy4gVG8gc2hvdyBhZGRpdGlvbmFsbHkgdGhlIGVmZmVjdCBvZiBhIFJhbmRvbSB2YXJpYWJsZSwgd2UgYWRkIHRoZSBzb3VyY2UgcG9wdWxhdGlvbiBvZiB0aGUgcGxhbnRzLgoKYGBge3J9CmxpYnJhcnkobG1lNCkKbG1lcmV4IDwtIGxtZXIoc2VlZHMucGVyLmZydWl0IH4gdHJlYXRtZW50ICsgKDF8c291cmNlLmZhbSksZGF0YT1ncmVlbmhvdXNlX2RhdGEpCmFub3ZhKGxtZXJleCkKc3VtbWFyeShsbWVyZXgpCmBgYAo=</div>
 
 
 

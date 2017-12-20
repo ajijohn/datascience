@@ -20,3 +20,17 @@ lmphan<- lm(data=greenhouse_data, greenhouse_data$seeds.per.fruit~greenhouse_dat
 anova(lmphan)
 ```
 
+```{r}
+summary(lmphan)
+```
+
+Our hypothesis that the treatment effects the seeds per fruit is not supported as our p-value is much higher than 0.05. Remember, we had three treatment groups, and we are interested to find out if the treatments had any effect on seeds.
+
+We load another package 'lmne4', which can assist us with assesing effects. In tackling this sort of questions, we have to keep in mind what kind of variable is we are interested in when looking at the effects. We could see this as discrete and continuous also, in our example we had three treatment groups - He, Ho, and Control, so we can infer them as discrete. In the literature, it is referred to as Fixed or Random effects. Our treatment groups would be classified as 'Fixed' effects. To show additionally the effect of a Random variable, we add the source population of the plants.
+
+```{r}
+library(lme4)
+lmerex <- lmer(seeds.per.fruit ~ treatment + (1|source.fam),data=greenhouse_data)
+anova(lmerex)
+summary(lmerex)
+```
