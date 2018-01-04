@@ -1,0 +1,29 @@
+intro to statistical techniques
+========================================================
+author: aji john
+date: 01.03.2018
+autosize: true
+
+Need for statistical techniques
+========================================================
+
+
+- Intuition is not always right
+- Need a scientific way to vouch for the assessment 
+
+
+Looking at a sample data
+========================================================
+
+```{r}
+summary(iris)
+```
+
+Looking at some associations
+========================================================
+
+```{r, echo=FALSE}
+plot(iris)
+```
+
+Do you think there is an relation between petal length and width ?
